@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Jejeo na UFBA</title>
+		<link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet"> 
+		<script language="JavaScript">
+			
+			function twoDigits(temp){
+				aux = new String(temp)
+				
+				if(aux.length == 1)
+					aux = "0" + aux
+				
+				return aux
+			}
+			
+			var target_date = new Date("june 16, 2020").getTime();
+			var dias, horas, minutos, segundos;
+			var regressiva = document.getElementById("regressiva");
+
+			setInterval(function () {
+
+				var current_date = new Date().getTime();
+				var segundos_f = (target_date - current_date) / 1000;
+
+				dias = parseInt(segundos_f / 86400);
+				segundos_f = segundos_f % 86400;
+				horas = parseInt(segundos_f / 3600);
+				segundos_f = segundos_f % 3600;
+				minutos = parseInt(segundos_f / 60);
+				segundos = parseInt(segundos_f % 60);
+
+				document.getElementById('dia').innerHTML = twoDigits(dias) + " Dia";
+				document.getElementById('hora').innerHTML = twoDigits(horas) + " Horas";	
+				document.getElementById('minuto').innerHTML = twoDigits(minutos) + " Min";
+				document.getElementById('segundo').innerHTML = twoDigits(segundos) + " S";
+			}, 1000);
+		</script>
+		
+		<style>
+			
+			@media (max-width: 480px) {
+				.numero{
+					background-color: red;
+					align = center;
+					text-align: center;
+					min-width: 100px;
+					border-top: thin solid #FFFFFF; 
+					border-left: thin solid #FFFFFF; 
+					border-right: thin solid #FFFFFF;
+					border-bottom: thin solid #CCCCCC;
+					max-width: 100px;
+					vertical-align: middle;
+					margin-top: 0px;
+					color: #000000;
+					font-size: 22px;
+					border-radius: 5px;
+					padding: 5px;
+				}
+				
+			body{
+				background-image: url("wallpaper2.jpg");
+				background-size: 600px 800px;
+				background-position: center;
+				margin: 0 auto;
+				background-repeat: no-repeat;
+				background-attachment: fixed; 	
+			}
+			
+			h1{
+				text-align:center; 
+			    margin-left: 30%;
+				font-weight: bold; 
+				color:Red;
+				font-size: 44px;
+				font-family: 'Metal Mania', cursive;
+			}
+			
+			h2{
+				text-align:center; 
+				font-weight: bold; 
+				margin-top: 220px;
+				margin-left: 30%;
+				margin-bottom: 0px;
+				color:Red;
+				font-size: 33px;
+				font-family: 'Metal Mania', cursive;
+			}
+
+			.relogio{
+			    margin-top: 0px;
+			}
+			
+			}
+			
+			@media (min-width: 600px) {
+				.numero{
+					background-color: red;
+					align = center;
+					text-align: center;
+					min-width: 100px;
+					border-top: thin solid #FFFFFF; 
+					border-left: thin solid #FFFFFF; 
+					border-right: thin solid #FFFFFF;
+					border-bottom: thin solid #CCCCCC;
+					max-width: 100px;
+					vertical-align: middle;
+					margin: 110px;
+					color: #000000;
+					font-size: 22px;
+					border-radius: 5px;
+					padding: 5px;
+				}
+				
+			.relogio{
+			    margin-top: 110px;
+			}
+				
+			body{
+				background-image: url("wallpaper2.jpg");
+				background-size: 100%;
+				margin: 0 auto;
+				background-repeat: no-repeat;
+				background-attachment: fixed; 	
+			}
+			
+			h1{
+				text-align:center; 
+				font-weight: bold; 
+				color:Red;
+				margin: 0 auto;
+				font-size: 44px;
+				font-family: 'Metal Mania', cursive;
+			}
+			
+			h2{
+				text-align:center; 
+				font-weight: bold; 
+				color:Red;
+				font-size: 30px;
+				margin: 0 auto;
+				font-family: 'Metal Mania', cursive;
+			}
+			
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<audio src="tictac.mp3" autoplay loop>
+			<p>Seu navegador não suporta o elemento audio </p>
+		</audio>
+		<h1>JEJEO, INSCREVA-SE NO SISU !</h1>
+		<h2>INSCREVA-SE IMEDIATAMENTE</h2>
+		<br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="relogio">
+			<table><tr></td>
+				<td><div class="numero" id="dia"></div></td>
+				<td><div class="numero" id="hora"></div></td>
+				<td><div class="numero" id="minuto"></div></td>
+				<td><div class="numero" id="segundo"></div></td></tr>
+			</table>
+		</div>
+	</body>
+</html>
